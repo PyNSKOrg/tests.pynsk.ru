@@ -1,4 +1,5 @@
 *.py[cod]
-pytest/pytest/settings/secrets.json
-pytest/settings/secrets.json
+project/pytest/settings/secrets.json
+project/settings/secrets.json
 clean.bash
+testapp.json

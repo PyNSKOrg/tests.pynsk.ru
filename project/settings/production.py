@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from pytest.settings.base import *
+from project.settings.base import *
 
 ALLOWED_HOSTS = get_secret('allowed_hosts')
 SECRET_KEY = get_secret('secret_key')

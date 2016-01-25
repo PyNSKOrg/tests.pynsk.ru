@@ -1,4 +1,4 @@
 # -*- encoding: utf-8 -*-
-from pytest.settings.base import *
+from project.settings.base import *
 
 DEBUG = True
