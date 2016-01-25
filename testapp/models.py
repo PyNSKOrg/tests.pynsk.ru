@@ -33,6 +33,9 @@ class Question(models.Model):
                              max_length=10,
                              default=CLOSE)
 
+    def __str__(self):
+        return u"%s" % self.text
+
     def __unicode__(self):
         return u"%s" % self.text
 
@@ -91,6 +94,9 @@ class Player(models.Model):
     def __unicode__(self):
         return u"%s" % self.tgm_user_id
 
+    def __str__(self):
+        return u"%s" % self.tgm_user_id
+
 
 class TestQuestion(models.Model):
     class Meta:
@@ -102,6 +108,9 @@ class TestQuestion(models.Model):
     def __unicode__(self):
         return u"Test: %s. Question: %s" % (self.test, self.question)
 
+    def __str__(self):
+        return u"Test: %s. Question: %s" % (self.test, self.question)
+
 
 class Answer(models.Model):
     MAX_LENGTH = 200
@@ -111,6 +120,9 @@ class Answer(models.Model):
                                           max_length=20000,
                                           blank=True)
     is_true = models.BooleanField(_('is true'), default=False)
+
+    def __str__(self):
+        return u"%s" % self.text
 
     def __unicode__(self):
         return u"%s" % self.text
@@ -194,6 +206,10 @@ class Game(models.Model):
         return u"%s Test: %s. Player: %s" % (self.start_on, self.test,
                                              self.player)
 
+    def __str__(self):
+        return u"%s Test: %s. Player: %s" % (self.start_on, self.test,
+                                             self.player)
+
 
 class GameQuestion(models.Model):
     class Meta:
@@ -230,4 +246,7 @@ class GameQuestion(models.Model):
         return False
 
     def __unicode__(self):
+        return u"%s, %s" % (self.game, self.question)
+
+    def __str__(self):
         return u"%s, %s" % (self.game, self.question)
