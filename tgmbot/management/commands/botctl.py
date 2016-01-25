@@ -11,4 +11,6 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
+        print("Start bot...")
         bot.polling(none_stop=True)
+        print("Stop bot...")
