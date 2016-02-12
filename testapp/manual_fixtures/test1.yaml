@@ -1,0 +1,23 @@
+-
+  info:
+    name: "Синтаксис Python #1. Для новичков"
+    author: Alexander Sapronov (PyNSK)
+    description: |
+      Тест позволит проверить проверить знание базовых конструкций языка
+      Тест содержит вопросы на базовые элементы синтаксиса, которые можно встретить при написании hello world
+    published: True
+    created_on: "2016-02-01T00:00:00+06:00"
+    changed_on: "2016-02-01T00:00:00+06:00"
+  questions:
+    -
+      question:
+        text: Как расшифровывается GIL?
+        qtype: 'C'
+      answers:
+        -
+          text: Global Interpreter Lock
+          is_true: True
+        -
+          text: Guido Invincible Leader
+        -
+          text: Global Internet Library
