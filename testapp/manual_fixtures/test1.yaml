@@ -1,6 +1,6 @@
 -
   info:
-    name: "Синтаксис Python #1. Для новичков"
+    name: "Синтаксис Python3 #1. Для новичков. "
     author: Alexander Sapronov (PyNSK)
     description: |
       Тест позволит проверить проверить знание базовых конструкций языка
@@ -11,13 +11,152 @@
   questions:
     -
       question:
-        text: Как расшифровывается GIL?
-        qtype: 'C'
+        text: Как вывести строку 'Hello world' на консоль?
       answers:
         -
-          text: Global Interpreter Lock
+          text: print 'Hello world'
+        -
+          text: print('Hello world')
           is_true: True
         -
-          text: Guido Invincible Leader
+          text: say('Hello world')
         -
-          text: Global Internet Library
+          text: printf('Hello world')
+    -
+      question:
+        text: Как организовать ввод данных с клавиатуры (какой метод использовать)?
+      answers:
+        -
+          text: input
+          is_true: True
+        -
+          text: cin
+        -
+          text: from
+        -
+          text: keyboard
+    -
+      question:
+        text: Какую строчку необходимо добавить в функцию, чтобы вернуть значение?
+      answers:
+        -
+          text: return
+          is_true: True
+        -
+          text: raise
+        -
+          text: значение в последней строчке является возвращаемым значением
+        -
+          text: goto
+    -
+      question:
+        text: Как написать функцию с названием func, которая принимает 2 аргумента?
+      answers:
+        -
+          text: |
+
+            def func(arg1, arg2):
+              ...
+          is_true: True
+        -
+          text: |
+
+            void func(arg1, arg2)
+            {
+              ...
+            }
+        -
+          text: |
+
+              void function(arg1, arg2):
+                ...
+        -
+          text: |
+
+              function func(arg1, arg2)
+                ...
+    -
+      question:
+        text: |
+          Как вывести элементы списка  [1, 3, 4, 7, 9] на консоль с помощью цикла for?
+      answers:
+        -
+          text: |
+
+            for x in [1, 3, 4, 7, 9]:
+              print(a)
+          is_true: True
+        -
+          text: |
+
+            for(int i; i < 9; i++)
+            {
+              print(a)
+            }
+        -
+          text: |
+
+            for(x in [1, 3, 4, 7, 9]):
+              print(a)
+        -
+          text: |
+
+            for(x in [1, 3, 4, 7, 9])
+            print(a)
+    -
+      question:
+        text: Как преобразовать строку в число?
+      answers:
+        -
+          text: int('1234')
+          is_true: True
+        -
+          text: to_int('1234')
+        -
+          text: parseInt('1234')
+        -
+          text: Number('1234')
+    -
+      question:
+        text: Каков общий вид условного цикла?
+      answers:
+        -
+          text: |
+
+            if <условие>:
+              <тело1>
+            elif <условие2>:
+              <тело2>
+            else:
+              <тело3>
+
+          is_true: True
+        -
+          text: |
+
+            if (<условие>) {
+                <тело1>
+            } else {
+                <тело1>
+            }
+        -
+          text: |
+
+            if (<условие>) {
+                <тело1>
+            } elseif (<условие2>) {
+                <тело2>
+            } else {
+                <тело3>
+            }
+
+        -
+          text: |
+
+            if <условие1> {
+                <тело1>
+            } else if <условие2> {
+                <тело2>
+            } else {
+                <тело3>
+            }
