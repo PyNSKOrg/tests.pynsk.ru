@@ -160,3 +160,91 @@
             } else {
                 <тело3>
             }
+    -
+      question:
+        text: Какой из ответов с кодом соответствует логике "пока переменная i меньше 5 выполнить..."
+      answers:
+        -
+          text: |
+
+            while i < 5:
+              ...
+          is_true: True
+        -
+          text: |
+
+            while i > 5:
+              ...
+        -
+          text: |
+
+            for x in i:
+              ...
+        -
+          text: |
+
+            if i < 5:
+              ...
+    -
+      question:
+        text: Функция super_func возвращает исключение ValueError, как его поймать?
+      answers:
+        -
+          text: |
+
+            try:
+              super_func()
+            except ValueError as e:
+              ...
+
+          is_true: True
+        -
+          text: raise super_func()
+        -
+          text: |
+
+            try:
+              super_func()
+            catch ValueError as e:
+              ...
+        -
+          text: throw ValueError in super_func()
+    -
+      question:
+        text: Как присвоить переменной abc целое число 5?
+      answers:
+        -
+          text: int abc = 5
+        -
+          text: abc = int 5
+        -
+          text: int abc = int(5)
+        -
+          text: abc = 5
+          is_true: True
+    -
+      question:
+        text: Как выделяются блоки кода?
+      answers:
+        -
+          text: отступами
+          is_true: True
+        -
+          text: )( - скобками
+        -
+          text: не выделяются
+        -
+          text: ][, }{, )( - скобками
+    -
+      question:
+        text: Какая конструкция языка позволяет подключить модуль math в программу?
+      answers:
+        -
+          text: import math
+          is_true: True
+        -
+          text: include 'math'
+        -
+          text: get 'math'
+        -
+          text: create 'math'
