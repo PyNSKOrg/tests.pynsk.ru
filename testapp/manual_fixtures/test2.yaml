@@ -1,0 +1,80 @@
+-
+  info:
+    name: "Синтаксис Python3 #2"
+    author: Alexander Sapronov (PyNSK)
+    description: |
+      Тест позволит проверить проверить знание конструкций языка
+      Тест содержит вопросы на элементы синтаксиса, которые можно встретить при написании hello world
+
+      # TODO
+      написать описание
+    published: True
+    created_on: "2016-02-01T00:00:00+06:00"
+    changed_on: "2016-02-01T00:00:00+06:00"
+  questions:
+    -
+      question:
+        text: Как проверить что переменная ABC целое или вещественное число?
+      answers:
+        -
+          text: isinstance(ABC, (int, float))
+          is_true: True
+        -
+          text: is_int(ABC) and is_float(ABC)
+        -
+          text: is_type(ABC, (int, float))
+        -
+          text: type_of(ABC) == int and type_of(ABC) == float
+    -
+      question:
+        text: Как читать конструкцию A or B and C?
+      answers:
+        -
+          text: A or (B and C)
+          is_true: True
+        -
+          text: (A or B) and C
+        -
+          text: A and B and C
+        -
+          text: A or B or C
+    -
+      question:
+        text: Как "бросить" исключение KeyError с текстом "my exception"?
+      answers:
+        -
+          text: raise KeyError("my exception")
+          is_true: True
+        -
+          text: KeyError("my exception")
+        -
+          text: catch KeyError with "my exception"
+        -
+          text: raise KeyError with "my exception"
+    -
+      question:
+        text: Как удалить элемент 'val1' из словаря my_dict?
+      answers:
+        -
+          text: del my_dict['val1']
+          is_true: True
+        -
+          text: delete my_dict['val1']
+        -
+          text: my_dict['val1'].del()
+        -
+          text: my_dict['val1'].delete()
+            ====
+    -
+      question:
+        text: Чему равна переменная __name__?
+      answers:
+        -
+          text: Имени файла без каталога и расширения (если модуль был импортирован) или __main__ (если модуль запускается как программа)
+          is_true: True
+        -
+          text: Имени создателя языка
+        -
+          text: Имени вашего пользователя в системе
+        -
+          text: Равен переменной __main__
