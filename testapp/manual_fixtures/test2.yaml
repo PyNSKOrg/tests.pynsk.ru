@@ -64,7 +64,6 @@
           text: my_dict['val1'].del()
         -
           text: my_dict['val1'].delete()
-            ====
     -
       question:
         text: Чему равна переменная __name__?
@@ -78,3 +77,61 @@
           text: Имени вашего пользователя в системе
         -
           text: Равен переменной __main__
+    -
+      question:
+        text: От чего наследуются все объекты в Python?
+      answers:
+        -
+          text: object
+          is_true: True
+        -
+          text: BaseObject
+        -
+          text: base_object
+        -
+          text: base
+    -
+      question:
+        text: Как разрешаются конфликты методов при множественном наследовании?
+      answers:
+        -
+          text: алгоритм MRO (Method Resolution Order)
+          is_true: True
+        -
+          text: алгоритм LRU (Linear Resolution Undefine)
+        -
+          text: алгоритм LFO (Linear Resolution Order)
+        -
+          text: алгоритм MFO (Method Formation Order)
+    -
+      question:
+        text: |
+          Есть переменная ABC с целочисленным значением.
+          Какой из предложенных вариантов преобразует переменную в строку с длинной 10 символов, дополнив ABC сначала нулями в случае необходимости
+
+          Пример:
+          ABC = 5
+          > '0000000005'
+      answers:
+        -
+          text: format(ABC, '010d')
+          is_true: True
+        -
+          text: "'0000000{}'.format(ABC)"
+        -
+          text: print(ABC)
+        -
+          text: format('010d', ABC)
+    -
+      question:
+        text: Какой встроенный метод позволит реализовать логику: на каждом шаге цикла for по списку ABC вывести значение элемента и порядковый номер шага итерации.
+      answers:
+        -
+          text: enumerate
+          is_true: True
+        -
+          text: никакой, надо делать вспомогательную переменную
+        -
+          text: index
+        -
+          text: number
