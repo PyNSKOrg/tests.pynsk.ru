@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 
+
 {% load static %}
 {% block meta_title %}Главная{% endblock %}
 
@@ -9,9 +10,7 @@
 
 {% block body %}
 
-    <h1 class="text-center">Тесты для проверки программерских способностей</h1>
-
-    <hr class="featurette-divider">
+    <h1 class="text-center">Проверь знание Python!</h1>
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
@@ -22,55 +21,38 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-md-4 text-center">
-                <img class="img-circle" src="http://placehold.it/140x140">
-                <h2>Python-тесты</h2>
-                <p>Вы сможете проверить свое знание языка Python</p>
+                <img class="img-circle" src="http://placehold.it/180x180">
+                <h2>Уникальные Python-тесты</h2>
+                <h3>Тесты разработаны программистами для программистов</h3>
             </div>
             <div class="col-md-4 text-center">
-                <img class="img-circle" src="http://placehold.it/140x140">
+                <img class="img-circle" src="http://placehold.it/180x180">
                 <h2>Мобильная платформа</h2>
-                <p>Чтобы пройти тест, достаточно аккаунта в Telegram</p>
+                <h3>Чтобы пройти тест, достаточно аккаунта в Telegram</h3>
             </div>
             <div class="col-md-4 text-center">
-                <img class="img-circle" src="http://placehold.it/140x140">
+                <img class="img-circle" src="http://placehold.it/180x180">
                 <h2>Рейтинг участников</h2>
-                <p>Можете соревноваться с другими</p>
+                <h3>Соревнуйся с друзьями и изучай Python вместе</h3>
             </div>
         </div><!-- /.row -->
 
 
-        <!-- START THE FEATURETTES -->
+        <hr>
+        <div class="row">
 
-        <hr class="featurette-divider">
+            <h1 class="text-center">Присоединяйся!</h1>
+            <h4 class="text-center">Кликай по картинке</h4>
 
-        <div class="featurette">
-            <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-            <h2 class="featurette-heading">Responsive Design. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">In simple terms, a responsive web design figures out what resolution of device it's being
-                served on. Flexible grids then size correctly to fit the screen.</p>
+            <div class="col-md-12 text-center">
+                <a href="https://telegram.me/sapronovbot" target="_blank">
+                    <img src="{% static 'images/t_logo.png' %}" class="img-circle" style="max-width: 180px">
+                </a>
+            </div>
         </div>
+    </div>
 
-        <hr class="featurette-divider">
 
-        <div class="featurette">
-            <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
-            <h2 class="featurette-heading">Smaller Footprint. <span class="text-muted">Lightweight.</span></h2>
-            <p class="lead">The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and
-                responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>
-        </div>
 
-        <hr class="featurette-divider">
-
-        <div class="featurette">
-            <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Flatness.</span></h2>
-            <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and
-                shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this
-                minimalist trend.</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- /END THE FEATURETTES -->
 
 {% endblock %}

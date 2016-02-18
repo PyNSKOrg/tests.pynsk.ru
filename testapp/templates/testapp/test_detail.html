@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block meta_title %}Задача {{ object.number|stringformat:"03d" }}{% endblock %}
+
+{% block body %}
+
+    <div class="well">
+        <header class="entry-header">
+
+            <h1 class="entry-title" itemprop="headline">Задача
+                номер {{ object.number|stringformat:"03d" }}: {{ object.title }}</h1>
+
+        </header>
+        <hr>
+
+        <div class="entry-content">
+            <article id="task-{{ object.pk }}">
+                {{ object.description}}
+            </article>
+            <hr/>
+
+            {% if object.tips %}
+                {% for tip in object.tips %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <button type="button" class="btn btn-raised btn-success spoiler-trigger"
+                                    data-toggle="collapse">
+                                Подсказка {{ forloop.counter }}: {{ tip.title }}
+                            </button>
+                        </div>
+                        <div class="panel-collapse collapse out">
+                            <div class="panel-body">
+                                {{ tip.html_content|safe }}
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+
+
+        </div>
+    </div>
+
+
+{% endblock body %}

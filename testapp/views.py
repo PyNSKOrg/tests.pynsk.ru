@@ -1,6 +1,8 @@
 # -*- encoding: utf-8 -*-
 from django.views.generic import TemplateView
+from django.views.generic import ListView, DetailView
 
+from testapp.models import Test
 
 class ThanksPage(TemplateView):
     template_name = 'pages/thanks.html'
@@ -8,6 +10,23 @@ class ThanksPage(TemplateView):
 
 class AboutPage(TemplateView):
     template_name = 'pages/about.html'
+
+
+class HowToWorkPage(TemplateView):
+    template_name = 'pages/howtowork.html'
+
+
+class TestsPage(ListView):
+    model = Test
+
+
+class TestDetailPage(DetailView):
+    model = Test
+
+
+
+class RatingPage(TemplateView):
+    template_name = 'pages/rating.html'
 
 
 class IndexPage(TemplateView):

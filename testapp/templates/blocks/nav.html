@@ -2,8 +2,10 @@
 {% load nav_tags %}
 
 {% url 'admin:index' as admin_page %}
-{% url 'pages:about' as tests_page %}
+{% url 'pages:tests' as tests_page %}
 {% url 'pages:about' as about_page %}
+{% url 'pages:rating' as rating_page %}
+{% url 'pages:howtowork' as howtowork_page %}
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -28,8 +30,10 @@
         <div class="collapse navbar-collapse" id="navmenu-collapse">
             <ul class="nav navbar-nav navbar-right">
                 {#                {% menu_element index_page 'Главная' %}#}
-                {% menu_element about_page 'О нас' %}
+                {% menu_element howtowork_page 'Как это работает' %}
                 {% menu_element tests_page 'Тесты' %}
+                {% menu_element rating_page 'Рейтинг' %}
+                {% menu_element about_page 'О нас' %}
 
                 {% if request.user.is_staff %}
                     {% menu_element admin_page 'Админка' %}

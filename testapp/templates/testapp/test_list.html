@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% load staticfiles %}
+
+{% block meta_title %}Тесты{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Наши тесты</h1>
+    <hr>
+    <div class="card-group">
+        {% for object in object_list %}
+
+
+            {#            <a href="{% url 'pages:test-detail' pk=object.pk %}">#}
+            <div class="card">
+{#                <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">#}
+                <div class="card-body">
+                    <h3 class="card-title text-center">{{ object.name }}</h3>
+                    <p class="card-text">{{ object.description }}</p>
+                </div>
+            </div>
+{#            </a>#}
+
+        {% empty %}
+            <h4>Еще нет задач</h4>
+        {% endfor %}
+    </div>
+
+
+
+
+{% endblock body %}
+
+{% block extra_footer_js %}
+    <script src="{% static 'js/holder.js' %}"></script>
+{% endblock extra_footer_js %}
