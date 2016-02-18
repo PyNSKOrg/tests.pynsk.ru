@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-
+{% load tg_tags %}
 
 {% load static %}
 {% block meta_title %}Главная{% endblock %}
@@ -11,7 +11,7 @@
 {% block body %}
 
     <h1 class="text-center">Проверь знание Python!</h1>
-
+    <hr>
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -21,17 +21,17 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-md-4 text-center">
-                <img class="img-circle" src="http://placehold.it/180x180">
+                <img class="img-circle" src="http://placehold.it/180/e67e22/2c3e50?text=+">
                 <h2>Уникальные Python-тесты</h2>
                 <h3>Тесты разработаны программистами для программистов</h3>
             </div>
             <div class="col-md-4 text-center">
-                <img class="img-circle" src="http://placehold.it/180x180">
+                <img class="img-circle" src="http://placehold.it/180/8e44ad/2c3e50?text=+">
                 <h2>Мобильная платформа</h2>
-                <h3>Чтобы пройти тест, достаточно аккаунта в Telegram</h3>
+                <h3>Достаточно аккаунта в Telegram</h3>
             </div>
             <div class="col-md-4 text-center">
-                <img class="img-circle" src="http://placehold.it/180x180">
+                <img class="img-circle" src="http://placehold.it/180/3498db/2c3e50?text=+">
                 <h2>Рейтинг участников</h2>
                 <h3>Соревнуйся с друзьями и изучай Python вместе</h3>
             </div>
@@ -45,7 +45,7 @@
             <h4 class="text-center">Кликай по картинке</h4>
 
             <div class="col-md-12 text-center">
-                <a href="https://telegram.me/sapronovbot" target="_blank">
+                <a href="https://telegram.me/{% bot_raw_name %}" target="_blank">
                     <img src="{% static 'images/t_logo.png' %}" class="img-circle" style="max-width: 180px">
                 </a>
             </div>

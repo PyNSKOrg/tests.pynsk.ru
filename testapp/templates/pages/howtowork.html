@@ -1,65 +1,55 @@
 {% extends 'base/base.html' %}
+{% load tg_tags %}
 
-
-{% block meta_title %}О нас{% endblock %}
+{% block meta_title %}Как это работает{% endblock %}
 {% block nav_block %}
 {% endblock %}
 
 
 {% block body %}
-    <div class="panel panel-default">
 
-        <div class="panel-body">
-
-
-            <div class="text-center"><h1>PyNSK - портал о Python</h1>
-
-                <h3>
-                    Популяризируем Python в русскоязычном Интернет
-                </h3>
-            </div>
-
-            <hr>
-
-            <h4>
-                <p>История начинается с проекта <a href="http://pythondigest.ru/">Python Дайджест</a>.</p>
-                <blockquote>
-                    Python Дайджест - проект по агрегации новостей из мира Python: статьи, интересные библиотеки и их
-                    релизы, самые-самые видео.
-                </blockquote>
-                <p>А продолжилась созданием первого Python-сообщества в Новосибирске - <b>PyNSK</b></p>
-                <blockquote>
-                    PyNSK - проект нацеленный на очные встречи разработчиков и создание интересного Python-контента.
-                </blockquote>
+    <!-- START THE FEATURETTES -->
+    <h1 class="text-center">Как это работает</h1>
 
 
-
-            </h4>
-
-
-
-            <p class="text-center">...Страница в процессе написания...</p>
-
-            <hr>
-
-            <div class="text-center">
-                <p>
-                    Присоединяйтесь к нам в соц. сетях:
-                </p>
-                <div style="font-size:32px">
-
-                    <a href="http://vk.com/pynsk" title="ВКонтакте"><i class="fa fa-vk"></i></a>
-                    <a href="http://www.facebook.com/PyNskCom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="http://twitter.com/py_nsk" title="Twitter"><i class="fa fa-twitter"></i></a>
-
-                </div>
-            </div>
-
-        </div>
-
-
+    <div class="featurette">
+        <img class="featurette-image img-circle pull-right" src="http://placehold.it/384/e67e22/2c3e50?text=+">
+        <h2 class="featurette-heading">Нужен только смартфон</h2>
+        <br>
+        <p class="lead">Мы создали <a href="https://telegram.org/">Telegram</a>-бота {% bot_url %} и натренировали проверять знания</p>
+        <p class="lead">Вы можете заниматься в любом месте и в любое время!</p>
+        <hr>
+        <h2 class="bg-warning">Шаг 1: добавь бота к себе - кликни {% bot_url %}</h2>
     </div>
 
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image img-circle pull-left" src="http://placehold.it/384/8e44ad/2c3e50?text=+">
+        <h2 class="featurette-heading">Уникальные тесты</h2>
+        <br>
+        <p class="lead">Мы программисты, каждый день используем Python на практике. Создали <b>крутые</b> тесты для таких же практиков</p>
+        <p class="lead">Все тесты расчитаны на практику!</p>
+        <hr>
+        <h2 class="bg-warning">Шаг 2: выбери тест - напиши боту команду <big>/tests</big></h2>
     </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image img-circle pull-right" src="http://placehold.it/384/3498db/2c3e50?text=+">
+        <h2 class="featurette-heading">Соревнуйся с другими</h2>
+        <br>
+        <p class="lead">
+            <a href="{% url 'pages:rating' %}"><big>Рейтинг</big></a> покажет насколько ты крут!
+        </p>
+        <p class="lead">Мы учитываем количество правильных ответов, скорость</p>
+        <hr>
+        <h2 class="bg-warning">Шаг 3: заходи на <a href="{% url 'pages:rating' %}">страницу</a>, делись результатами</h2>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
 {% endblock body %}
 

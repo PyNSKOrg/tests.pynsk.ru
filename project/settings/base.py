@@ -128,3 +128,4 @@ X_FRAME_OPTIONS = 'DENY'
 
 # BOT SETTINGS
 TGM_BOT_TOKEN = get_secret('tgm_bot_token')
+TGM_BOT_NAME = get_secret('tgm_bot_name')
