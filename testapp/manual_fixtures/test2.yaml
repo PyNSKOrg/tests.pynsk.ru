@@ -27,15 +27,15 @@
           text: type_of(ABC) == int and type_of(ABC) == float
     -
       question:
-        text: Как читать конструкцию A or B and C (каков приоритет операций)?
+        text: Как читать конструкцию not A or B and C (каков приоритет операций)?
       answers:
         -
-          text: A or (B and C)
+          text: (not A) or (B and C)
           is_true: True
         -
-          text: (A or B) and C
+          text: (not A) or B) and C
         -
-          text: A and B and C
+          text: (not (A and B)) and C
         -
           text: A or B or C
     -
@@ -229,3 +229,134 @@
           text: Переменная указывает на класс
         -
           text: Список ссылок на экземпляры класса
+    -
+      question:
+        text: Укажите отличительную черту объектов-итераторов с точки зрения хранения элементов
+      answers:
+        -
+          text: Элемент итератора вычисляется в момент обращения
+          is_true: True
+        -
+          text: Все элементы итератора вычисляются заранее, но не при создании
+        -
+          text: Текущий элемент итератора вычисляются вместе со следующим в момент обращения
+        -
+          text: Все элементы итератора хранятся в памяти, а вычисляются при создании объекта
+    -
+      question:
+        text: Какой смысл несет оператор yield?
+      answers:
+        -
+          text: Служит для возврата значений из функции, превращает функцию в генератор.
+          is_true: True
+        -
+          text: sys.exit()
+        -
+          text: Служит для возврата значений из функции в точности как return. Return и yield синонимы.
+        -
+          text: Такой конструкции в Python 3 нет
+    -
+      question:
+        text: |
+
+          Укажите равносильный код:
+
+          def generator_range(first, last):
+            yield from range(first, last)
+
+      answers:
+        -
+          text: |
+
+            def generator_range(first, last):
+              for i in xrange(first, last):
+                  yield i
+
+          is_true: True
+        -
+          text: |
+
+            def generator_range(first, last):
+              yield i
+              for i in xrange(first, last):
+                yield i
+        -
+          text: |
+
+            def generator_range(first, last):
+              for i in xrange(first, last):
+                yield return i
+        -
+          text: |
+
+            def generator_range(first, last):
+              for i in xrange(first, last):
+                return i
+    -
+      question:
+        text: Что происходит при выходе из функции-генератора _НЕ_ по оператору yield?
+      answers:
+        -
+          text: Генерируется исключение StopIteration
+          is_true: True
+        -
+          text: Возвращается None
+        -
+          text: Ничего
+        -
+          text: Генерируется исключение GeneratorIteration
+    -
+      question:
+        text: |
+          Какой "магический" метод (с названием __ИМЯ__) используется встроенной функцией help, чтобы вывести подробное описание объекта?
+
+          Например
+            > help(5)
+
+            Help on int object:
+
+            class int(object)
+             |  int(x=0) -> int or long
+             |  int(x, base=10) -> int or long
+             ...
+
+      answers:
+        -
+          text: __doc__
+          is_true: True
+        -
+          text: __help__
+        -
+          text: __man__
+        -
+          text: __info__
+          ====
+    -
+      question:
+        text: |
+          Какой код соответствует логике - "Если хотя бы один элемент итератора ABC равен None - вызвать функцию exit"
+      answers:
+        -
+          text: |
+
+            if any(iter([x is None for x in ABC])):
+              exit()
+
+          is_true: True
+        -
+          text: |
+
+            for x in ABC:
+              if ABC is None:
+                exit()
+        -
+          text: |
+
+            for cur_element, next_element in ABC.items():
+              if cur_element is None:
+                exit()
+        -
+          text: |
+
+            if any(iter([x is None for x in ABC])):
+              exit()
