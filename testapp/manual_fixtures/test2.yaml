@@ -27,7 +27,7 @@
           text: type_of(ABC) == int and type_of(ABC) == float
     -
       question:
-        text: Как читать конструкцию A or B and C?
+        text: Как читать конструкцию A or B and C (каков приоритет операций)?
       answers:
         -
           text: A or (B and C)
@@ -135,3 +135,97 @@
           text: index
         -
           text: number
+    -
+      question:
+        text: |
+          Как можно переписать этот код?
+
+          a = [x for x in range(100) if x % 2 == 0]
+
+      answers:
+        -
+          text: |
+            a = []
+            for x in range(100):
+              if x % 2 == 0:
+                a.append(x)
+
+          is_true: True
+        -
+          text: |
+
+            for x in range(100):
+              if x % 2 == 0:
+                a.append(x)
+        -
+          text: |
+
+            [x for x in range(100):
+              if x % 2 == 0:
+                a.append(x)]
+        -
+          text: |
+
+            a = []
+            for x in range(100):
+              if x % 2:
+                a.append(x)
+    -
+      question:
+        text: Какая встроенная функция может помочь для задачи - Применить функцию super_func к каждому элементу списка ABC?
+      answers:
+        -
+          text: map
+          is_true: True
+        -
+          text: reduce
+        -
+          text: make
+        -
+          text: iterate
+    -
+      question:
+        text: "Какая конструкция языка Python позволяет изменить поведение функции, не изменяя её код?"
+      answers:
+        -
+          text: декоратор
+          is_true: True
+        -
+          text: рефактор
+        -
+          text: реплесер
+        -
+          text: трансдьюсер
+    -
+      question:
+        text: Как получить список всех доступных методов объекта ABC?
+      answers:
+        -
+          text: dir(ABC)
+          is_true: True
+        -
+          text: methods(ABC)
+        -
+          text: help(ABC)
+        -
+          text: man(ABC)
+    -
+      question:
+        text: |
+          Есть класс:
+
+          class MyClass(object):
+            def method(self, a, b, c):
+              pass
+
+          Что хранит переменная self?
+      answers:
+        -
+          text: Переменная указывает на объект экземпляра класса
+          is_true: True
+        -
+          text: None
+        -
+          text: Переменная указывает на класс
+        -
+          text: Список ссылок на экземпляры класса
