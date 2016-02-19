@@ -7,6 +7,7 @@
 {% url 'pages:rating' as rating_page %}
 {% url 'pages:howtowork' as howtowork_page %}
 
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,8 +39,10 @@
                 {% if request.user.is_staff %}
                     {% menu_element admin_page 'Админка' %}
                 {% endif %}
-
+                <a href="{% url 'pages:donate' %}" class="btn btn-raised bg-warning" role="button">Поддержи проект</a>
             </ul>
+
+
         </div>
         <!-- end of /.navbar-collapse -->
     </div>

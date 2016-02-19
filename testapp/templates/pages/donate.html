@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+
+{% block meta_title %}Поддержи проект{% endblock %}
+{% block nav_block %}
+{% endblock %}
+
+
+{% block body %}
+    <div class="panel panel-default">
+
+    <div class="panel-body">
+        <div class="text-center"><h1>Поддержи проект</h1></div>
+
+        <hr>
+        <blockquote>
+            <p>Нам нравится заниматься проектом</p>
+            <p>Помочь проекту просто. Укажи сумму, которую готов внести для развития проекта, и кликай на нужную платежную систему.</p>
+        </blockquote>
+
+                <div class="text-center">
+            <iframe frameborder="0" allowtransparency="true" scrolling="no"
+                    src="https://money.yandex.ru/embed/shop.xml?account=41001222156458&quickpay=shop&payment-type-choice=on&mobile-payment-type-choice=on&writer=seller&targets=%D0%9D%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0+tests.pynsk.ru&default-sum=200&button-text=03&comment=on&hint=&fio=on&mail=on&successURL=tests.pynsk.ru%2Fthanks"
+                    width="450" height="253"></iframe>
+        </div>
+
+        <hr>
+        <h4>На что пойдут деньги?</h4>
+
+        <ui>
+            <li>Создание новых тестов</li>
+            <li>Материальное поощрение авторов</li>
+            <li>Продвижение проекта</li>
+            <li>Оплату хостинга и домена</li>
+        </ui>
+    </div>
+{% endblock body %}
+
