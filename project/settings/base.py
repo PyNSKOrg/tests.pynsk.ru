@@ -29,7 +29,7 @@ def get_secret(setting, secrets=secrets):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret('secret_key')
-SITE_TITLE = 'Python тесты'
+SITE_TITLE = 'Python тесты от PyNSK'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
