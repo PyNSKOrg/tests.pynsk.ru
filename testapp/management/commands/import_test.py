@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+import collections
 import os
 
 import yaml
@@ -9,6 +10,19 @@ from testapp.models import Test, Question, Answer, TestQuestion
 
 def validate_test(test):
     return True
+
+
+def prepare_text(text):
+    symbols = collections.OrderedDict((
+        ('&', '&amp;'),
+        ('<', '&lt;'),
+        ('>', '&gt;'),
+        ('"', "&quot;"),
+        ("'", '&#39;'),
+    ))
+    for k, v in symbols.items():
+        text = text.replace(k, v)
+    return text
 
 
 def parse(path):

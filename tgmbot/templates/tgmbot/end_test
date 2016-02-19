@@ -1,3 +1,4 @@
+{% autoescape off %}
 {% if additional_text %}
     {{ additional_text }}
 {% endif %}
@@ -8,3 +9,4 @@
 
 /tests - выбрать новый тест
 /help - помощь
+{% endautoescape %}

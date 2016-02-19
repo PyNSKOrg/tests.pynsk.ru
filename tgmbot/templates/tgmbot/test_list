@@ -1,3 +1,4 @@
+{% autoescape off %}
 {% for test in test_list %}
 # {{forloop.counter}}
 *Название*: {{test.name}}
@@ -8,3 +9,4 @@
 {% empty %}
 К сожалению, нет доступных тестов
 {% endfor %}
+{% endautoescape %}

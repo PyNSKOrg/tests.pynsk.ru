@@ -1,4 +1,6 @@
+{% autoescape off %}
 /tests - список тестов
 /next - следующий вопрос
 /stop - завершить тест
 /help - помощь
+{% endautoescape %}

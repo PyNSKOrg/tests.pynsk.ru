@@ -1,6 +1,8 @@
+{% autoescape off %}
 {% if additional_text %}
     {{ additional_text }}
 {% endif %}
 {% if number %}#{{number}}{% endif %}
 {{ question.text }}{% for letter, option in option_list %}
 /{{ letter|upper }} {{ option.text }}{% endfor %}
+{% endautoescape %}
