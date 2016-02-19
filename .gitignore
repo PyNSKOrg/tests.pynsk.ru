@@ -4,3 +4,5 @@ project/settings/secrets.json
 clean.bash
 testapp.json
 fabfile
+project/settings/secrets_deploy.json
+log_error.log

@@ -7,6 +7,7 @@ SECRET_KEY = get_secret('secret_key')
 DEBUG = False
 
 STATIC_ROOT = get_secret('static_root')
+MEDIA_ROOT = get_secret('media_root')
 
 # EMAIL
 SERVER_EMAIL = get_secret('server_email')
@@ -17,7 +18,7 @@ EMAIL_PORT = get_secret('email_port')
 EMAIL_USE_SSL = get_secret('email_use_ssl')
 
 ADMINS = tuple([(username, email)
-                for username, email in get_secret('admins').iteritems()])
+                for username, email in get_secret('admins').items()])
 
 LOGGING = {
     'version': 1,
