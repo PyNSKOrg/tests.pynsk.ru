@@ -4,23 +4,26 @@
 
 {% block meta_title %}Тесты{% endblock %}
 
+{% block page_title_name %}
+    Наши тесты
+{% endblock %}
+
 {% block body %}
 
-    <h1 class="text-center">Наши тесты</h1>
-    <hr>
+
     <div class="card-group">
         {% for object in object_list %}
 
 
             {#            <a href="{% url 'pages:test-detail' pk=object.pk %}">#}
             <div class="card">
-{#                <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">#}
+                {#                <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">#}
                 <div class="card-body">
                     <h3 class="card-title text-center">{{ object.name }}</h3>
                     <p class="card-text">{{ object.description }}</p>
                 </div>
             </div>
-{#            </a>#}
+            {#            </a>#}
 
         {% empty %}
             <h4>Еще нет задач</h4>

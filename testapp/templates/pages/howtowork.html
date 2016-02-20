@@ -5,51 +5,84 @@
 {% block nav_block %}
 {% endblock %}
 
+{% block page_title_name %}
+    Как это работает
+{% endblock %}
 
 {% block body %}
 
-    <!-- START THE FEATURETTES -->
-    <h1 class="text-center">Как это работает</h1>
-    <hr>
 
-    <div class="featurette">
-        <img class="featurette-image img-circle pull-right" src="http://placehold.it/384/e67e22/2c3e50?text=+">
-        <h2 class="featurette-heading">Нужен только смартфон</h2>
-        <br>
-        <p class="lead">Мы создали <a href="https://telegram.org/">Telegram</a>-бота {% bot_url %} и натренировали проверять знания</p>
-        <p class="lead">Вы можете заниматься в любом месте и в любое время!</p>
-        <hr>
-        <h2 class="bg-warning">Шаг 1: добавь бота к себе - кликни {% bot_url %}</h2>
+    <div class="card-group">
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <div class="featurette">
+                    <img class="featurette-image img-circle pull-right"
+                         src="http://placehold.it/256/e67e22/2c3e50?text=+">
+                    <h2 class="featurette-heading">Нужен только смартфон</h2>
+                    <br>
+                    <p class="lead">Мы создали <a href="https://telegram.org/">Telegram</a>-бота {% bot_url %} и
+                        натренировали
+                        проверять знания</p>
+                    <p class="lead">Вы можете заниматься в любом месте и в любое время!</p>
+                    <hr>
+                    <h2 class="bg-warning">Шаг 1: добавь бота к себе - кликни {% bot_url %}</h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="featurette">
+                    <img class="featurette-image img-circle pull-left"
+                         src="http://placehold.it/256/8e44ad/2c3e50?text=+">
+                    <h2 class="featurette-heading text-right">Уникальные тесты</h2>
+                    <br>
+                    <p class="lead">Мы программисты, каждый день используем Python на практике. Создали <b>крутые</b>
+                        тесты для
+                        таких же практиков</p>
+                    <p class="lead">Все тесты расчитаны на практику!</p>
+                    <hr>
+                    <h2 class="bg-warning">Шаг 2: выбери тест - напиши боту команду <big>/tests</big></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="featurette">
+                    <img class="featurette-image img-circle pull-right"
+                         src="http://placehold.it/256/3498db/2c3e50?text=+">
+                    <h2 class="featurette-heading">Соревнуйся с другими</h2>
+                    <br>
+                    <p class="lead">
+                        <a href="{% url 'pages:rating' %}"><big>Рейтинг</big></a> покажет насколько ты крут!
+                    </p>
+                    <p class="lead">Мы учитываем количество правильных ответов, скорость</p>
+                    <hr>
+                    <h2 class="bg-warning">Шаг 3: заходи на <a href="{% url 'pages:rating' %}">страницу</a>, делись
+                        результатами
+                    </h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
     </div>
-
-    <hr class="featurette-divider">
-
-    <div class="featurette">
-        <img class="featurette-image img-circle pull-left" src="http://placehold.it/384/8e44ad/2c3e50?text=+">
-        <h2 class="featurette-heading">Уникальные тесты</h2>
-        <br>
-        <p class="lead">Мы программисты, каждый день используем Python на практике. Создали <b>крутые</b> тесты для таких же практиков</p>
-        <p class="lead">Все тесты расчитаны на практику!</p>
-        <hr>
-        <h2 class="bg-warning">Шаг 2: выбери тест - напиши боту команду <big>/tests</big></h2>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="featurette">
-        <img class="featurette-image img-circle pull-right" src="http://placehold.it/384/3498db/2c3e50?text=+">
-        <h2 class="featurette-heading">Соревнуйся с другими</h2>
-        <br>
-        <p class="lead">
-            <a href="{% url 'pages:rating' %}"><big>Рейтинг</big></a> покажет насколько ты крут!
-        </p>
-        <p class="lead">Мы учитываем количество правильных ответов, скорость</p>
-        <hr>
-        <h2 class="bg-warning">Шаг 3: заходи на <a href="{% url 'pages:rating' %}">страницу</a>, делись результатами</h2>
-    </div>
-
-    <hr class="featurette-divider">
-
     <!-- /END THE FEATURETTES -->
 {% endblock body %}
 

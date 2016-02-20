@@ -1,7 +1,6 @@
 {% load static %}
 
 
-
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 <head>
@@ -27,7 +26,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/bootstrap-material-design.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/ripples.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/ripples.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     {% block head_css %}{% endblock head_css %}
@@ -64,9 +64,27 @@
 
 
         <div class="{% block container_class %}container{% endblock container_class %}">
-            <div class="row">
-                {% block body %}
 
+            {% block page_title %}
+                <div class="row">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <div class="text-center"><h1>{% block page_title_name %}{% endblock page_title_name %}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock page_title %}
+            <div class="row">
+
+                {% block body %}
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {% block content %}
+                            {% endblock content %}
+                        </div>
+                    </div>
                 {% endblock body %}
             </div>
         </div>
