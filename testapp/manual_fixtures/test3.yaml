@@ -1,0 +1,143 @@
+-
+  info:
+    name: "Модули стандартной библиотеки #1"
+    author: Alexander Sapronov (PyNSK)
+    description: |
+      Тест позволит проверить проверить знание стандартной библиотеки
+    published: True
+    created_on: "2016-02-01T00:00:00+06:00"
+    changed_on: "2016-02-01T00:00:00+06:00"
+  questions:
+    -
+      question:
+        text: Какой модуль содержит инструменты для обработки времени и даты разными способами?
+      answers:
+        -
+          text: datetime
+          is_true: True
+        -
+          text: dateutils
+        -
+          text: time
+        -
+          text: calendar
+    -
+      question:
+        text: В чем отличие методов datetime.now() и datetime.utcnow()?
+      answers:
+        -
+          text: Один метод возвращает текущее локальное время, второй текущее UTC время.
+          is_true: True
+        -
+          text: Отличий нет
+        -
+          text: |
+
+            now() возвращает текущее локальное время
+            utcnow() возвращает два значения: локальное время и дельту между локальным временем и UTC
+        -
+          text: utcnow() возвращает разницу между локальным текущим временем и UTC
+    -
+      question:
+        text: Какой модуль стандартной библиотеки содержит "Сортированный словарь"?
+      answers:
+        -
+          text: collections
+          is_true: True
+        -
+          text: dicts
+        -
+          text: orderdict
+        -
+          text: struct
+    -
+      question:
+        text: Какой модуль и какая переменная в нем содержит список аргументов коммандной строки?
+      answers:
+        -
+          text: sys.argv
+          is_true: True
+        -
+          text: console.argv
+        -
+          text: sys.kwargs
+        -
+          text: python.args
+    -
+      question:
+        text: Какой модуль позволяет сделать паузу(усыпить) во время работы программы?
+      answers:
+        -
+          text: модуль time, метод sleep
+          is_true: True
+        -
+          text: модуль sleep
+        -
+          text: модуль runtime
+        -
+          text: модуль datetime
+    -
+      question:
+        text: Какой модуль поможет решить задачу - "Заполнить список ABC 100 случайными числами от 0 до 50"?
+      answers:
+        -
+          text: random
+          is_true: True
+        -
+          text: array
+        -
+          text: digits
+        -
+          text: faker
+    -
+      question:
+        text: Какой модуль предоставляет инструменты для работы с Comma-Separated Values?
+      answers:
+        -
+          text: csv
+          is_true: True
+        -
+          text: values
+        -
+          text: utils
+        -
+          text: tools
+    -
+      question:
+        text: В каком модуле хранится переменная Пи?
+      answers:
+        -
+          text: math
+          is_true: True
+        -
+          text: constants
+        -
+          text: values
+        -
+          text: Такого числа в стандартной библиотеке нет
+    -
+      question:
+        text: Что позволяет сделать модуль pprint?
+      answers:
+        -
+          text: Вывести объект в читаемом виде (важно для вложенных структур)
+          is_true: True
+        -
+          text: В модуле содержится стандартный print
+        -
+          text: Это не модуль стандартной библиотеки
+        -
+          text: Вывести указатель на объект
+    -
+      question:
+        text: Что реализует модуль os.path?
+      answers:
+        -
+          text: Реализует некоторые полезные функции на работы с путями.
+          is_true: True
+        -
+          text: Реализует системо-независимые пути до файлов
+        -
+          text: Содержит пути до стандартных модулей Python
+        -
+          text: Такого модуля не существует
