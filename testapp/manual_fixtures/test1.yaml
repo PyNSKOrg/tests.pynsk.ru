@@ -57,6 +57,7 @@
 
             def func(arg1, arg2):
               ...
+
           is_true: True
         -
           text: |
@@ -68,13 +69,13 @@
         -
           text: |
 
-              void function(arg1, arg2):
-                ...
+            void function(arg1, arg2):
+              ...
         -
           text: |
 
-              function func(arg1, arg2)
-                ...
+            function func(arg1, arg2)
+              ...
     -
       question:
         text: |
@@ -85,6 +86,7 @@
 
             for x in [1, 3, 4, 7, 9]:
               print(a)
+
           is_true: True
         -
           text: |
@@ -105,7 +107,7 @@
             print(a)
     -
       question:
-        text: Как преобразовать строку в число?
+        text: Как преобразовать строку '1234' в число?
       answers:
         -
           text: int('1234')
@@ -169,22 +171,26 @@
 
             while i < 5:
               ...
+
           is_true: True
         -
           text: |
 
             while i > 5:
               ...
+
         -
           text: |
 
             for x in i:
               ...
+
         -
           text: |
 
             if i < 5:
               ...
+
     -
       question:
         text: Функция super_func возвращает исключение ValueError, как его поймать?
@@ -247,7 +253,7 @@
         -
           text: get 'math'
         -
-          text: create 'math'
+          text: import 'math'
     -
       question:
         text: Модуль foo содержит функцию bar. Какая строчка позволит импортировать bar?
@@ -270,6 +276,7 @@
           sum(10, 2, 5, 7, 9)
           > 33
           Как выглядит объявление функции?
+
       answers:
         -
           text: "def sum(arg1, arg2, arg3, ...):"
@@ -320,7 +327,7 @@
         text: Что такое глобальные переменные?
       answers:
         -
-          text: Переменные доступные во всем модуле.
+          text: Переменные доступные во всем модуле
           answer_description: Глобальные переменные можно создать с помощью директивы global или объявив переменную вне функций и классов
           is_true: True
         -
@@ -384,7 +391,7 @@
           Какие ограничения на название переменных?
       answers:
         -
-          text: Названия могут содержать олько латинские буквы и целые числа, названия должны начинаться с буквы
+          text: Названия могут содержать только латинские буквы и целые числа, названия должны начинаться с буквы
           is_true: True
         -
           text: Нельзя пробелы и знаки пунктуации
