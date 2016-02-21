@@ -13,7 +13,8 @@
 
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <h4><b>Горите желанием добавить свой тест? Пишите на <a href="mailto:pynsk.nsk@gmail.com">pynsk.nsk@gmail.com</a></b></h4>
+            <h4><b>Горите желанием добавить свой тест? Пишите на <a href="mailto:pynsk.nsk@gmail.com">pynsk.nsk@gmail.com</a></b>
+            </h4>
         </div>
     </div>
 
@@ -26,8 +27,32 @@
             <div class="card">
                 {#                <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">#}
                 <div class="card-body">
-                    <h3 class="card-title text-center">{{ object.name }}</h3>
-                    <p class="card-text">{{ object.description }}</p>
+
+                    <h2 class="card-title text-center">{{ object.name }}</h2>
+                    <h4>
+                        <mark>О чем тест:</mark>
+                    </h4>
+                    <p class="card-text lead">{{ object.description }}</p>
+
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <h4>
+                                <mark>Несколько вопросов из теста:</mark>
+                            </h4>
+                        </div>
+                        <div class="col-md-8">
+
+
+                            {% for question in object.questions.all|slice:":4" %}
+                                <p class="card-text">{{ question }}</p>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
             {#            </a>#}
