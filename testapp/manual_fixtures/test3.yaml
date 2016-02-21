@@ -141,3 +141,143 @@
           text: Содержит пути до стандартных модулей Python
         -
           text: Такого модуля не существует
+    -
+      question:
+        text: Какой модуль содержит функцию для создания папок?
+      answers:
+        -
+          text: os
+          is_true: True
+        -
+          text: sys
+        -
+          text: dirs
+        -
+          text: all
+    -
+      question:
+        text: С помощью какого модуля можно преобразовать объект в поток байтов?
+      answers:
+        -
+          text: pickle
+          is_true: True
+        -
+          text: bytes
+        -
+          text: pipes
+        -
+          text: struct
+    -
+      question:
+        text: Что содержит модуль itertools?
+      answers:
+        -
+          text: Сборник полезных итераторов
+          is_true: True
+        -
+          text: Консольные утилиты для работы с итераторами
+        -
+          text: Разные способы итерации по спискам
+        -
+          text: Реализацию функции iter()
+    -
+      question:
+        text: |
+
+          Какой модуль содержит функцию, которая позволяет найти все .png файлы по указанному пути?
+
+          > function('folder/*.png')
+          ['./1.png', './2.png']
+      answers:
+        -
+          text: glob
+          is_true: True
+        -
+          text: shutil
+        -
+          text: os.path
+        -
+          text: sys
+    -
+      question:
+        text: Какой модуль позволяет реализовать абстрактные классы в Python?
+      answers:
+        -
+          text: abc
+          is_true: True
+        -
+          text: ast
+        -
+          text: abstract
+        -
+          text: Такого модуля не существует
+    -
+      question:
+        text: |
+
+          Укажите модуль, который позволит реализовать -
+            "Вызвать внешнюю программу PROG с аргументами, а затем получить вывод программы обратно в Python?
+      answers:
+        -
+          text: subprocess
+          is_true: True
+        -
+          text: sys
+        -
+          text: os
+        -
+          text: shutil
+    -
+      question:
+        text: Регулярные выражения реализованы в модуле?
+      answers:
+        -
+          text: re
+          is_true: True
+        -
+          text: string
+        -
+          text: regex
+        -
+          text: regexp
+    -
+      question:
+        text: Сколько типов сообщений в logging (error, info...)?
+      answers:
+        -
+          text: 5 (debug, info, warning, error, critical)
+          is_true: True
+        -
+          text: 3 (debug, warning, error)
+        -
+          text: 4 (debug, info, warning, error)
+        -
+          text: 6 (debug, print, info, warning, error, critical)
+    -
+      question:
+        text: Модуль стандартной библиотеки <УКАЖИТЕ НАЗВАНМЕ> позволяет кодировать и декодировать JSON (JavaScript Object Notation) в удобном формате?
+      answers:
+        -
+          text: json
+          is_true: True
+        -
+          text: simplejson
+        -
+          text: ujson
+        -
+          text: ijson
+    -
+      question:
+        text: |
+          Известно, что в списках можно хранить разнотиповые объекты.
+          Какой модуль стандартной библиотеки реализует контейнер для хранения однотиповых объектов?
+      answers:
+        -
+          text: array
+          is_true: True
+        -
+          text: numpy
+        -
+          text: struct
+        -
+          text: map
