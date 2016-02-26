@@ -21,6 +21,13 @@ ADMINS = tuple([(username, email)
                 for username, email in get_secret('admins').items()])
 TGM_SSL_SERT = get_secret('tgm_ssl_sert')
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
