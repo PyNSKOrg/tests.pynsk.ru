@@ -1,5 +1,7 @@
+{% autoescape off %}
 {% if available_time %}
 Этот тест будет доступен только через {{ available_time|timeuntil }}
 {% else %}
 Этот тест не доступен.    
 {% endif %}
+{% endautoescape %}
