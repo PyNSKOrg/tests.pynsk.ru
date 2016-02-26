@@ -35,7 +35,7 @@ class RatingPage(ListView):
     def get_context_data(self, **kwargs):
         context = super(RatingPage, self).get_context_data(**kwargs)
         context['players'] = {x.id: x for x in Player.objects.all()}
-        context['tests'] = {x.id: x for x in Test.objects.all()}
+        context['tests'] = {x.id: x for x in Test.objects.filter(published=True)}
         return context
         #
         # # мне надо
