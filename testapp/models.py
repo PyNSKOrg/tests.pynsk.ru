@@ -37,7 +37,7 @@ class Question(models.Model):
     published = models.BooleanField("is published", default=True)
     qtype = models.CharField("question type", choices=QTYPE, max_length=10, default=CLOSE)
 
-    def __unicode__(self):
+    def __str__(self):
         return u"%s" % (self.text)
 
 
@@ -76,7 +76,7 @@ class Test(models.Model):
             raise TestIsNotAvailable(available_time=available_time)
 
 
-    def __unicode__(self):
+    def __str__(self):
         return u"%s" % (self.name)
 
 
@@ -106,6 +106,10 @@ class Player(models.Model):
         except Game.MultipleObjectsReturned:
             return self.games.filter(state=Game.OPEN).order_by('-start_on').first()
 
+    @property
+    def rating(self):
+        return self.get_rating()
+
     def get_rating(self):
         rating = []
         all_result = ResultView.objects.all()
@@ -124,7 +128,7 @@ class Player(models.Model):
         return rating
 
 
-    def __unicode__(self):
+    def __str__(self):
         return u"%s, %s, %s, %s" % (self.tgm_user_id, self.tgm_last_name, self.tgm_first_name, self.tgm_user_name)
 
 
@@ -133,7 +137,7 @@ class TestQuestion(models.Model):
         unique_together = (("test", "question"),)
     test = models.ForeignKey('Test')
     question = models.ForeignKey('Question')
-    def __unicode__(self):
+    def __str__(self):
         return u"Test: %s. Question: %s" % (self.test, self.question)
 
 
@@ -143,7 +147,8 @@ class Answer(models.Model):
     text = models.CharField("Answer text", max_length=MAX_LENGTH)
     answer_description = models.TextField("Answer description", max_length=20000, blank=True)
     is_true = models.BooleanField("is true", default=False)
-    def __unicode__(self):
+    
+    def __str__(self):
         return u"%s" % (self.text)
 
 
@@ -219,7 +224,7 @@ class Game(models.Model):
         )
         return result
 
-    def __unicode__(self):
+    def __str__(self):
         return u"%s Test: %s. Player: %s" % (self.start_on, self.test, self.player)
 
 
@@ -253,7 +258,7 @@ class GameQuestion(models.Model):
                 return True
         return False
 
-    def __unicode__(self):
+    def __str__(self):
         return u"%s, %s" % (self.game, self.question)
 
 

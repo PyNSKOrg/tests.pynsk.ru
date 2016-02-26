@@ -2,7 +2,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic import TemplateView
 
-from testapp.models import Test
+from testapp.models import Test, Player, ResultView
 
 
 class ThanksPage(TemplateView):
@@ -25,8 +25,24 @@ class TestDetailPage(DetailView):
     model = Test
 
 
-class RatingPage(TemplateView):
+class RatingPage(ListView):
+    model = ResultView
     template_name = 'pages/rating.html'
+
+    def get_queryset(self):
+        return ResultView.objects.order_by('test')
+
+    def get_context_data(self, **kwargs):
+        context = super(RatingPage, self).get_context_data(**kwargs)
+        context['players'] = {x.id: x for x in Player.objects.all()}
+        context['tests'] = {x.id: x for x in Test.objects.all()}
+        return context
+        #
+        # # мне надо
+        # взять всех пользователей
+        # взять все тесты
+        #
+        # для каждого теста получить пользователя и его рейтинг
 
 
 class DonatePage(TemplateView):

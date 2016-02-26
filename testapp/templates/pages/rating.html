@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-
+{% load nav_tags %}
 
 {% block meta_title %}Рейтинг{% endblock %}
 {% block nav_block %}
@@ -7,13 +7,97 @@
 
 
 {% block page_title_name %}
-    Мы создаем рейтинг...
+    Рейтинг
 {% endblock %}
 
 {% block content %}
 
-        <h4>Еще немного и он появится...</h4>
+    {% regroup object_list by test as groups %}
 
+    {% with groups.0.grouper as test_active %}
 
+        <h2>Наши тесты:</h2>
+
+        {% for _, test in tests.items %}
+            <a href="#{{ test.id }}"
+               aria-controls="{{ test.id }}"
+               role="button"
+               data-toggle="tab"
+                    {% if test.id ==  test_active %}
+               class="active btn btn-raised bg-warning"
+                    {% else %}
+               class="btn btn-raised bg-warning"
+                    {% endif %}
+            >{{ test.name }}</a>
+
+        {% endfor %}
+        <hr>
+
+        <div class="tab-content">
+            {% for data in groups %}
+                <div role="tabpanel" class="tab-pane fade {% if data.grouper == test_active %} in active {% endif %}"
+                     id="{{ data.grouper.id }}">
+
+                    <div class="item-container">
+                        <table class="table table-striped text-center"
+                               data-toggle="table"
+                               data-pagination="true"
+                               data-id-field="id"
+                               data-page-list="[10, 25, 50, 100, ALL]"
+                               data-show-footer="false"
+                               data-toolbar="#toolbar"
+                               data-search="true"
+                               data-show-refresh="true"
+                               data-show-toggle="true"
+                               data-show-columns="true"
+                               data-show-export="true"
+                        >
+                            <thead>
+                            <tr>
+                                <th data-sortable="True">#</th>
+                                <th data-sortable="True">ФИО</th>
+                                <th data-sortable="True">Рейтинг</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for item in data.list|dictsortreversed:"score" %}
+                                <tr>
+                                    <td data-field="id">{{ forloop.counter }}</td>
+                                    <td data-field="name">{{ item.player.tgm_first_name }} {{ item.player.tgm_last_name }}</td>
+                                    <td data-field="score">{{ item.score }}</td>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% endwith %}
+    {#    #}
+    {#        {% for object in groups %}#}
+    {#            {{ object }}#}
+    {##}
+    {#            <p>{{ object.tgm_user_id }}</p>#}
+    {#            {% for rating in object.rating %}#}
+    {#                {{ forloop.counter }}. <b>{{ rating.0.test_name }}</b>#}
+    {#                <p>Оценка: {{ rating.0.score|floatformat:"-1" }}, лучше, чем {{ rating.1|floatformat:"-2" }}% результатов#}
+    {#            {% endfor %}#}
+    {##}
+    {##}
+    {#        {% endfor %}#}
 {% endblock content %}
 
+{% block extra_footer_js %}
+    <script type="text/javascript">
+        $('#myTabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show')
+        })
+
+        {#        $('#myTabs a:first').tab('show'); // Select first tab#}
+    </script>
+{% endblock %}

@@ -16,3 +16,8 @@ def menu_element(context, url, title, icon_class=''):
         label,
         icon_class,
     )
+
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)
