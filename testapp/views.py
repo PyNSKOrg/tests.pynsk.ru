@@ -20,6 +20,9 @@ class HowToWorkPage(TemplateView):
 class TestsPage(ListView):
     model = Test
 
+    def get_queryset(self):
+        return Test.objects.filter(published=True)
+
 
 class TestDetailPage(DetailView):
     model = Test
