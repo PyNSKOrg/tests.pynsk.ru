@@ -6,6 +6,7 @@
 Общее количество вопросов: {{ result.total_questions }}
 Задано вопросов: {{ result.asked_questions }}
 Правильных ответов: {{ result.right_answers}}
+Оценка: {{ result.score }}{% if rating != None %}, лучше, чем {{ rating|floatformat:"-2" }}% результатов{% endif %}
 
 /tests - выбрать новый тест
 /help - помощь

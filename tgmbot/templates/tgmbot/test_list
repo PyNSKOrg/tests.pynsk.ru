@@ -4,7 +4,8 @@
 *Название*: {{test.name}}
 *Автор*: {{test.author}}
 *Кол-во вопросов*: {{ test.questions__count }}
-*Описание*: {{test.description}}
+*Описание*: {{test.description}}{% if test.interval %}{% with interval=test.get_interval %}
+*Интервал*: {% if interval.day %}{{ interval.day }} дн. {% endif %}{% if interval.hour %}{{ interval.hour }} час. {% endif %}{% if interval.minute %}{{ interval.minute }} мин. {% endif %}{% if interval.second %}{{ interval.second }} сек. {% endif %}{% endwith %}{% endif %}
 *Чтобы начать*: [/test_{{test.pk}}]
 {% empty %}
 К сожалению, нет доступных тестов

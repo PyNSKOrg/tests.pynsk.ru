@@ -1,0 +1,6 @@
+Ваши результаты:
+{% for rating in rating_list %}{{ forloop.counter }}. <b>{{ rating.0.test_name }}</b>
+Оценка: {{ rating.0.score|floatformat:"-1" }}, лучше, чем {{ rating.1|floatformat:"-2" }}% результатов
+Пройти снова: /test_{{ rating.0.test_id }}
+
+{% endfor %}
