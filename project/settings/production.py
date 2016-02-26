@@ -19,6 +19,7 @@ EMAIL_USE_SSL = get_secret('email_use_ssl')
 
 ADMINS = tuple([(username, email)
                 for username, email in get_secret('admins').items()])
+TGM_SSL_SERT = get_secret('tgm_ssl_sert')
 
 LOGGING = {
     'version': 1,
